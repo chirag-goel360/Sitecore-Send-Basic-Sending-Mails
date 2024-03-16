@@ -120,10 +120,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\SitecoreSendConstants.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CheckMailingList.cs" />
+    <Compile Include="Helpers\SitecoreSendHelpers.cs" />
+    <Compile Include="Models\SitecoreSend\AddMultipleSubscribers.cs" />
+    <Compile Include="Models\SitecoreSend\AddMultipleSubscribersResult.cs" />
+    <Compile Include="Models\SitecoreSend\CreateCampaign.cs" />
+    <Compile Include="Models\SitecoreSend\CreateMailingList.cs" />
+    <Compile Include="Models\SitecoreSend\SitecoreSendResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,7 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
