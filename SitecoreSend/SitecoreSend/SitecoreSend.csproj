@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Helpers\CheckMailingList.cs" />
     <Compile Include="Helpers\SitecoreSendHelpers.cs" />
+    <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\SitecoreSend\AddMultipleSubscribers.cs" />
     <Compile Include="Models\SitecoreSend\AddMultipleSubscribersResult.cs" />
     <Compile Include="Models\SitecoreSend\CreateCampaign.cs" />

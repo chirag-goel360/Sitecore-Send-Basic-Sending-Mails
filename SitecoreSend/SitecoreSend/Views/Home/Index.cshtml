@@ -1,4 +1,6 @@
-﻿@{
+﻿@model SitecoreSend.Models.ContactForm
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,7 +10,38 @@
         <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
         <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
     </section>
-
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmailList, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.EmailList, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EmailList, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="forminput" type="submit-group">
+                        <input value="Submit" type="submit" class="btn btn-primary" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
     <div class="row">
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
             <h2 id="gettingStartedTitle">Getting started</h2>

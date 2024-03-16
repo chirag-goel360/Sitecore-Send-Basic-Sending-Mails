@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SitecoreSend.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,12 @@ namespace SitecoreSend.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(ContactForm contactForm)
         {
             return View();
         }

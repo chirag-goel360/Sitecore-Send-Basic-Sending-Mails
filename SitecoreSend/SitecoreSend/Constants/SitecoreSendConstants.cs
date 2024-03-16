@@ -9,5 +9,9 @@ namespace SitecoreSend.Constants
     {
         public const string BaseURL = "https://api.sitecoresend.io/v3";
         public const string APIKey = "";
+        public const string SenderEmail = "";
+        public const string ReplyToEmail = "";
+        public const string ConfirmationToEmail = "";
+        public const string IsAB = "false";
     }
 }
