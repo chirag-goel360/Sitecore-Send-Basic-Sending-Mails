@@ -12,33 +12,52 @@
     </section>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            @if (IsPost)
             {
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
-                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
-                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.EmailList, htmlAttributes: new { @class = "control-label" })
-                    @Html.TextBoxFor(model => model.EmailList, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.EmailList, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label" })
-                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    <div class="forminput" type="submit-group">
-                        <input value="Submit" type="submit" class="btn btn-primary" />
+                if (ViewBag.SuccessMessage != "fail")
+                {
+                    <p>Mails Send Successfully</p>
+                }
+                else
+                {
+                    <p>Sending Mails Failed!!!</p>
+                }
+            }
+            else
+            {
+                using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                     </div>
-                </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Subject, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmailList, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.EmailList, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmailList, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.Message, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="forminput" type="submit-group">
+                            <input value="Submit" type="submit" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }
             }
         </div>
     </div>

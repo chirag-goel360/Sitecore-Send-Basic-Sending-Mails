@@ -18,6 +18,10 @@ namespace SitecoreSend.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Please Enter the Subject of Mail")]
+        [Display(Name = "Mail Subject")]
+        public string Subject { get; set; }
+
         [Required(ErrorMessage = "Please Enter the List of Participants for Mail")]
         [Display(Name = "Participants Email")]
         public string EmailList { get; set; }
